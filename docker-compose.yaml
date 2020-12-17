@@ -3,8 +3,6 @@ services:
   chickenrun:
     image: edevouge/chickenrun:latest
     restart: always
-    volumes:
-      - ./chickenrun.conf:/etc/chickenrun/
     environment:
       - CHICKENRUN_CONF_PATH=/etc/chickenrun/chickenrun.conf
     privileged: true
@@ -12,6 +10,7 @@ services:
       - /dev/gpiomem:/dev/gpiomem
     volumes:
       - /sys:/sys
+      - ./chickenrun.conf:/etc/chickenrun/chickenrun.conf
     logging:
       options:
         max-file: "1"
