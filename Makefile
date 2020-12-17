@@ -1,4 +1,4 @@
-NAME ?= $(shell basename $(PWD))
+NAME ?= chickenrun
 VERSION := $(shell cat .VERSION)
 HASH :=  $(shell git rev-parse --short HEAD)
 

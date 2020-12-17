@@ -60,8 +60,7 @@ class MqttClient():
     def __connect(self):
         logging.info("Connecting mqtt client %s to the broker..." %(self.chickenHouseName))
         try:
-            rc = self._client.connect(host=self.mqttHost, port=self.mqttPort)
-            print("RC="+str(rc))
+            self._client.connect(host=self.mqttHost, port=self.mqttPort)
             self._client.loop_start()
             self._onConnectCallBack()
         except Exception as e:

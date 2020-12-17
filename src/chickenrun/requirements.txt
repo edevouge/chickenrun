@@ -1,3 +1,6 @@
 paho-mqtt
 jsonschema
 gpiozero
+RPi.GPIO
+pigpio
+RPIO
