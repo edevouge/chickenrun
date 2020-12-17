@@ -16,22 +16,16 @@ services:
 
   netdata:
     image: netdata/netdata
-    restart: always
     ports:
       - 19999:19999
-    security_opt:
-      - apparmor=unconfined
     cap_add:
       - SYS_PTRACE
+    security_opt:
+      - apparmor:unconfined
     volumes:
-      - /etc/passwd:/host/etc/passwd:ro
-      - /etc/group:/host/etc/group:ro
       - /proc:/host/proc:ro
       - /sys:/host/sys:ro
-      - /etc/os-release:/host/etc/os-release:ro
       - /var/run/docker.sock:/var/run/docker.sock:ro
-      - ./netdata/netdata.conf:/etc/netdata/netdata.conf:ro
-      - ./netdata/cloud/:/var/lib/netdata/cloud.d/
     logging:
       options:
         max-file: "1"
