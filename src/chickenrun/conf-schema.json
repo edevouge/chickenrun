@@ -1,0 +1,361 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "$id": "http://example.com/example.json",
+    "type": "object",
+    "title": "The root schema",
+    "description": "The root schema comprises the entire JSON document.",
+    "default": {},
+    "examples": [
+        {
+            "name": "chicken-2",
+            "doors": [
+                {
+                    "name": "door-first",
+                    "openDoorSensorGpio": 5,
+                    "closedDoorSensorGpio": 6,
+                    "motorForwardGpio": 19,
+                    "motorBackwardGpio": 26,
+                    "openingTimeout": 10,
+                    "closingTimeout": 10
+                }
+            ],
+            "gpioMapping": {
+                "ledRedGpioPin": 14,
+                "ledGreenGpioPin": 20,
+                "ledBlueGpioPin": 21,
+                "buzzerGpioPin": 24,
+                "openButtonGpioPin": 23,
+                "closeButtonGpioPin": 13
+            },
+            "mqtt": {
+                "mqttHost": "192.168.86.38",
+                "mqttPort": 1883,
+                "reconnectWaitTime": 5,
+                "ca_certs": null,
+                "certfile": null,
+                "keyfile": null
+            }
+        }
+    ],
+    "required": [
+        "name",
+        "doors",
+        "gpioMapping",
+        "mqtt"
+    ],
+    "properties": {
+        "name": {
+            "$id": "#/properties/name",
+            "type": "string",
+            "title": "The name schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "chicken-2"
+            ]
+        },
+        "doors": {
+            "$id": "#/properties/doors",
+            "type": "array",
+            "title": "The doors schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": [],
+            "examples": [
+                [
+                    {
+                        "name": "door-first",
+                        "openDoorSensorGpio": 5,
+                        "closedDoorSensorGpio": 6,
+                        "motorForwardGpio": 19,
+                        "motorBackwardGpio": 26,
+                        "openingTimeout": 10,
+                        "closingTimeout": 10
+                    }
+                ]
+            ],
+            "additionalItems": true,
+            "items": {
+                "$id": "#/properties/doors/items",
+                "anyOf": [
+                    {
+                        "$id": "#/properties/doors/items/anyOf/0",
+                        "type": "object",
+                        "title": "The first anyOf schema",
+                        "description": "An explanation about the purpose of this instance.",
+                        "default": {},
+                        "examples": [
+                            {
+                                "name": "door-first",
+                                "openDoorSensorGpio": 5,
+                                "closedDoorSensorGpio": 6,
+                                "motorForwardGpio": 19,
+                                "motorBackwardGpio": 26,
+                                "openingTimeout": 10,
+                                "closingTimeout": 10
+                            }
+                        ],
+                        "required": [
+                            "name",
+                            "openDoorSensorGpio",
+                            "closedDoorSensorGpio",
+                            "motorForwardGpio",
+                            "motorBackwardGpio",
+                            "openingTimeout",
+                            "closingTimeout"
+                        ],
+                        "properties": {
+                            "name": {
+                                "$id": "#/properties/doors/items/anyOf/0/properties/name",
+                                "type": "string",
+                                "title": "The name schema",
+                                "description": "An explanation about the purpose of this instance.",
+                                "default": "",
+                                "examples": [
+                                    "door-first"
+                                ]
+                            },
+                            "openDoorSensorGpio": {
+                                "$id": "#/properties/doors/items/anyOf/0/properties/openDoorSensorGpio",
+                                "type": "integer",
+                                "title": "The openDoorSensorGpio schema",
+                                "description": "An explanation about the purpose of this instance.",
+                                "default": 0,
+                                "examples": [
+                                    5
+                                ]
+                            },
+                            "closedDoorSensorGpio": {
+                                "$id": "#/properties/doors/items/anyOf/0/properties/closedDoorSensorGpio",
+                                "type": "integer",
+                                "title": "The closedDoorSensorGpio schema",
+                                "description": "An explanation about the purpose of this instance.",
+                                "default": 0,
+                                "examples": [
+                                    6
+                                ]
+                            },
+                            "motorForwardGpio": {
+                                "$id": "#/properties/doors/items/anyOf/0/properties/motorForwardGpio",
+                                "type": "integer",
+                                "title": "The motorForwardGpio schema",
+                                "description": "An explanation about the purpose of this instance.",
+                                "default": 0,
+                                "examples": [
+                                    19
+                                ]
+                            },
+                            "motorBackwardGpio": {
+                                "$id": "#/properties/doors/items/anyOf/0/properties/motorBackwardGpio",
+                                "type": "integer",
+                                "title": "The motorBackwardGpio schema",
+                                "description": "An explanation about the purpose of this instance.",
+                                "default": 0,
+                                "examples": [
+                                    26
+                                ]
+                            },
+                            "openingTimeout": {
+                                "$id": "#/properties/doors/items/anyOf/0/properties/openingTimeout",
+                                "type": "integer",
+                                "title": "The openingTimeout schema",
+                                "description": "An explanation about the purpose of this instance.",
+                                "default": 0,
+                                "examples": [
+                                    10
+                                ]
+                            },
+                            "closingTimeout": {
+                                "$id": "#/properties/doors/items/anyOf/0/properties/closingTimeout",
+                                "type": "integer",
+                                "title": "The closingTimeout schema",
+                                "description": "An explanation about the purpose of this instance.",
+                                "default": 0,
+                                "examples": [
+                                    10
+                                ]
+                            }
+                        },
+                        "additionalProperties": true
+                    }
+                ]
+            }
+        },
+        "gpioMapping": {
+            "$id": "#/properties/gpioMapping",
+            "type": "object",
+            "title": "The gpioMapping schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": {},
+            "examples": [
+                {
+                    "ledRedGpioPin": 14,
+                    "ledGreenGpioPin": 20,
+                    "ledBlueGpioPin": 21,
+                    "buzzerGpioPin": 24,
+                    "openButtonGpioPin": 23,
+                    "closeButtonGpioPin": 13
+                }
+            ],
+            "required": [
+                "ledRedGpioPin",
+                "ledGreenGpioPin",
+                "ledBlueGpioPin",
+                "buzzerGpioPin",
+                "openButtonGpioPin",
+                "closeButtonGpioPin"
+            ],
+            "properties": {
+                "ledRedGpioPin": {
+                    "$id": "#/properties/gpioMapping/properties/ledRedGpioPin",
+                    "type": "integer",
+                    "title": "The ledRedGpioPin schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": 0,
+                    "examples": [
+                        14
+                    ]
+                },
+                "ledGreenGpioPin": {
+                    "$id": "#/properties/gpioMapping/properties/ledGreenGpioPin",
+                    "type": "integer",
+                    "title": "The ledGreenGpioPin schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": 0,
+                    "examples": [
+                        20
+                    ]
+                },
+                "ledBlueGpioPin": {
+                    "$id": "#/properties/gpioMapping/properties/ledBlueGpioPin",
+                    "type": "integer",
+                    "title": "The ledBlueGpioPin schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": 0,
+                    "examples": [
+                        21
+                    ]
+                },
+                "buzzerGpioPin": {
+                    "$id": "#/properties/gpioMapping/properties/buzzerGpioPin",
+                    "type": "integer",
+                    "title": "The buzzerGpioPin schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": 0,
+                    "examples": [
+                        24
+                    ]
+                },
+                "openButtonGpioPin": {
+                    "$id": "#/properties/gpioMapping/properties/openButtonGpioPin",
+                    "type": "integer",
+                    "title": "The openButtonGpioPin schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": 0,
+                    "examples": [
+                        23
+                    ]
+                },
+                "closeButtonGpioPin": {
+                    "$id": "#/properties/gpioMapping/properties/closeButtonGpioPin",
+                    "type": "integer",
+                    "title": "The closeButtonGpioPin schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": 0,
+                    "examples": [
+                        13
+                    ]
+                }
+            },
+            "additionalProperties": true
+        },
+        "mqtt": {
+            "$id": "#/properties/mqtt",
+            "type": "object",
+            "title": "The mqtt schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": {},
+            "examples": [
+                {
+                    "mqttHost": "192.168.86.38",
+                    "mqttPort": 1883,
+                    "reconnectWaitTime": 5,
+                    "ca_certs": null,
+                    "certfile": null,
+                    "keyfile": null
+                }
+            ],
+            "required": [
+                "mqttHost",
+                "mqttPort",
+                "reconnectWaitTime",
+                "ca_certs",
+                "certfile",
+                "keyfile"
+            ],
+            "properties": {
+                "mqttHost": {
+                    "$id": "#/properties/mqtt/properties/mqttHost",
+                    "type": "string",
+                    "title": "The mqttHost schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": "",
+                    "examples": [
+                        "192.168.86.38"
+                    ]
+                },
+                "mqttPort": {
+                    "$id": "#/properties/mqtt/properties/mqttPort",
+                    "type": "integer",
+                    "title": "The mqttPort schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": 0,
+                    "examples": [
+                        1883
+                    ]
+                },
+                "reconnectWaitTime": {
+                    "$id": "#/properties/mqtt/properties/reconnectWaitTime",
+                    "type": "integer",
+                    "title": "The reconnectWaitTime schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": 0,
+                    "examples": [
+                        5
+                    ]
+                },
+                "ca_certs": {
+                    "$id": "#/properties/mqtt/properties/ca_certs",
+                    "type": "null",
+                    "title": "The ca_certs schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": null,
+                    "examples": [
+                        null
+                    ]
+                },
+                "certfile": {
+                    "$id": "#/properties/mqtt/properties/certfile",
+                    "type": "null",
+                    "title": "The certfile schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": null,
+                    "examples": [
+                        null
+                    ]
+                },
+                "keyfile": {
+                    "$id": "#/properties/mqtt/properties/keyfile",
+                    "type": "null",
+                    "title": "The keyfile schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": null,
+                    "examples": [
+                        null
+                    ]
+                }
+            },
+            "additionalProperties": true
+        }
+    },
+    "additionalProperties": true
+}

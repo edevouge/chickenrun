@@ -1,0 +1,30 @@
+{
+  "name": "chicken-2",
+  "doors": [
+    {
+      "name": "door-first",
+      "openDoorSensorGpio": 5,
+      "closedDoorSensorGpio": 6,
+      "motorForwardGpio": 19,
+      "motorBackwardGpio": 26,
+      "openingTimeout": 10,
+      "closingTimeout": 10
+    }
+  ],
+  "gpioMapping": {
+    "ledRedGpioPin": 14,
+    "ledGreenGpioPin": 20,
+    "ledBlueGpioPin": 21,
+    "buzzerGpioPin": 24,
+    "openButtonGpioPin": 23,
+    "closeButtonGpioPin": 13
+  },
+  "mqtt": {
+    "mqttHost": "192.168.86.38",
+    "mqttPort": 1883,
+    "reconnectWaitTime": 5,
+    "ca_certs": null,
+    "certfile": null,
+    "keyfile": null
+  }
+}
