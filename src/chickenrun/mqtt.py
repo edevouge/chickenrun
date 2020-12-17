@@ -47,6 +47,9 @@ class MqttClient():
             topic="chickenrun/%s/+/desired-state" % (self.chickenHouseName),
             qos=2)
         self._client.subscribe(
+            topic="chickenrun/%s/desired-state" % (self.chickenHouseName),
+            qos=2)
+        self._client.subscribe(
             topic="chickenrun/global/desired-state",
             qos=2)
 

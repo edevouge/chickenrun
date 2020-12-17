@@ -111,3 +111,8 @@ class ChickenHouse():
             self._signal.state = SignalState.DoorTimeoutError
         elif state == DoorState.Initialize:
             self._signal.state = SignalState.Initialize
+        self._publishDoorsStates()
+
+    def _publishDoorsStates(self):
+        for door in self._doors:
+            self._mqtt.publishDoorState(door.name, door.currentState, door.openDoorSensorState, door.closedDoorSensorState)
