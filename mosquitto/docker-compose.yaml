@@ -2,6 +2,7 @@ version: '3.6'
 services:
   mosquitto:
     image: eclipse-mosquitto:1.6
+    restart: always 
     expose:
       - "1883"
     ports:
@@ -18,6 +19,7 @@ services:
 
   netdata:
     image: netdata/netdata
+    restart: always 
     ports:
       - 19999:19999
     cap_add:

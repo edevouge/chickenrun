@@ -2,6 +2,7 @@ version: '3.6'
 services:
   chickenrun:
     image: edevouge/chickenrun:latest
+    restart: always
     volumes:
       - ./chickenrun.conf:/etc/chickenrun/
     environment:
@@ -16,6 +17,7 @@ services:
 
   netdata:
     image: netdata/netdata
+    restart: always
     ports:
       - 19999:19999
     cap_add:
