@@ -7,10 +7,10 @@ services:
     ports:
       - "1883:1883"
     volumes:
-      - ./mosquitto/config/mosquitto.conf:/mosquitto/config/mosquitto.conf
-      - ./mosquitto/config/auth:/mosquitto/config/auth
-      - ./mosquitto/data:/mosquitto/data
-      - ./mosquitto/certs:/mosquitto/certs
+      - ./config/mosquitto.conf:/mosquitto/config/mosquitto.conf
+      - ./config/auth:/mosquitto/config/auth
+      - ./data:/mosquitto/data
+      - ./certs:/mosquitto/certs
     logging:
       options:
         max-file: "1"
