@@ -2,7 +2,7 @@ import time
 import paho.mqtt.client as paho
 from enum import Enum
 
-MQTT_HOST = "localhost"
+MQTT_HOST = "10.10.0.1"
 FARM_ID = "Ferme-Nostang"
 CHICKEN_HOUSE_ID = "cabane-1"
 
